@@ -12,8 +12,8 @@ jobs:
       - name: Pull Latest Code
         uses: actions/checkout@v3
       - name: Login into AWS ECR
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_LOGIN_ID }}
           aws-secret-access-key: ${{ secrets.AWS_ACCESS_KEY }}
-          aws-region: ${{secrets.AWS_REGION_NAME}}
+          aws-region: ${{ secrets.AWS_REGION_NAME }}
