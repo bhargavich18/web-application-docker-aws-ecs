@@ -1,0 +1,32 @@
+{
+  "name": "web-application-docker-aws-ecs",
+  "version": "1.0.0",
+  "description": "simple web application that has docker support.creates a dockerized application that pushes to ECS on demand.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhargavich18/web-application-docker-aws-ecs.git"
+  },
+  "keywords": [
+    "node",
+    "web",
+    "docker",
+    "aws",
+    "ecs",
+    "githubactions",
+    "github"
+  ],
+  "author": "Bhargavi Chiluka",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/bhargavich18/web-application-docker-aws-ecs/issues"
+  },
+  "homepage": "https://github.com/bhargavich18/web-application-docker-aws-ecs#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
