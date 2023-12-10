@@ -5,7 +5,8 @@ COPY . .
 RUN npm ci --omit=dev
 
 
-FROM gcr.io/distroless/nodejs18-debian11
+FROM alpine
+RUN apk add --update nodejs npm
 COPY --from=build-env /opt/app /opt/app
 WORKDIR /opt/app
 ENV NODE_ENV production
