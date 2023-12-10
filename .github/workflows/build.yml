@@ -35,7 +35,7 @@ jobs:
       - name: Notify Build Status
         if: always()
         uses: cinotify/github-action@main
-          with:
-            to: 'bhargavichiluka1898@gmail.com'
-            subject: 'build Status'
-            body: 'Build Github action executed. please check the status.'
+        with:
+          to: "bhargavichiluka1898@gmail.com"
+          subject: "build Status"
+          body: "Build Github action executed. please check the status."
