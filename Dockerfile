@@ -5,7 +5,7 @@ COPY . .
 RUN npm ci --omit=dev
 
 
-FROM gcr.io/distroless/nodejs20-debian11
+FROM gcr.io/distroless/nodejs18-debian11
 COPY --from=build-env /opt/app /opt/app
 WORKDIR /opt/app
 ENV NODE_ENV production
