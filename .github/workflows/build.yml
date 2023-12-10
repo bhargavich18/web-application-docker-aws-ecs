@@ -3,7 +3,7 @@ name: Build Docker Image & Push to AWS-ECS
 on:
   push:
   pull_request:
-    branches: ["master"]
+    branches: ["main"]
 
 jobs:
   build:
