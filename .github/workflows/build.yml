@@ -40,7 +40,7 @@ jobs:
           REPOSITORY: ${{ secrets.AWS_ECS_REPO }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG \
-          --cache-from type=local,src=/tmp/.buildx-cache \
-          --cache-to type=local,dest=/tmp/.buildx-cache  .
+          docker build -t $REGISTRY/$REPOSITORY:image \
+          --cache-to mode=max,image-manifest=true,oci-mediatypes=true,type=registry,ref=$REGISTRY/$REPOSITORY:cache \
+          --cache-from type=registry,ref=$REGISTRY/$REPOSITORY:cache .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
