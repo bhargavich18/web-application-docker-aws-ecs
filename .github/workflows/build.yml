@@ -33,6 +33,10 @@ jobs:
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
           
       - name: Scan Docker image for vulnerabilities
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          REPOSITORY: ${{ secrets.AWS_ECS_REPO }}
+          IMAGE_TAG: ${{ github.sha }}
         run: |
           docker pull aquasec/trivy
           docker run --rm -v $(pwd):/workdir aquasec/trivy --exit-code 1 --severity HIGH $REGISTRY/$REPOSITORY:$IMAGE_TAG
