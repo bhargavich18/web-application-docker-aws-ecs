@@ -35,7 +35,7 @@ jobs:
       - name: Scan Docker image for vulnerabilities
         run: |
           docker pull aquasec/trivy
-          docker run --rm -v $(pwd):/workdir aquasec/trivy --exit-code 1 --severity HIGH your-image-name:latest
+          docker run --rm -v $(pwd):/workdir aquasec/trivy --exit-code 1 --severity HIGH $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
       - name: Notify Build Status
         if: always()
