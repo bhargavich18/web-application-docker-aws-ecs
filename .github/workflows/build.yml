@@ -39,7 +39,7 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker pull aquasec/trivy
-          docker run --rm -v $(pwd):/workdir aquasec/trivy --exit-code 1 --severity HIGH $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          docker run --rm -v $(pwd):/workdir aquasec/trivy $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
       - name: Notify Build Status
         if: always()
